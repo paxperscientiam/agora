@@ -22,6 +22,18 @@ show ()
 }
 
 
+set ()
+{
+    case "${1}" in
+        display-off)
+            pmset displaysleepnow
+            exit
+            ;;
+    esac
+ }
+
+
+
 
 
 
@@ -32,7 +44,12 @@ do
             shift
             show "${@}"
             exit
-        ;;
+            ;;
+        set)
+            shift
+            set "${@}"
+            exit
+            ;;
     esac
 done
 
